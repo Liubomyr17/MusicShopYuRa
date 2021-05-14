@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="8dp"
     tools:context=".MainActivity">
 
     <EditText
@@ -13,6 +14,153 @@
         android:layout_height="wrap_content"
         android:hint="Your name"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPersonName"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:src="@drawable/music"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/aclonica"
+            android:textSize="28sp"
+            android:rotation="-20"
+            android:text="Sale -30%"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <TextView
+        android:text="Select Item"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/guitar"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/priceTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="Order Price"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_below="@+id/priceTitleTextView"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:text="0"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/currencyTextView"
+            android:layout_below="@+id/priceTitleTextView"
+            android:layout_toRightOf="@+id/priceTextView"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:text="$"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/quantityTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="Quantity"
+            android:layout_toRightOf="@+id/priceTitleTextView"
+            android:layout_marginLeft="110dp"
+            android:layout_marginStart="110dp" />
+
+        <Button
+            android:id="@+id/minusButton"
+            android:layout_toRightOf="@+id/currencyTextView"
+            android:layout_below="@+id/quantityTitleTextView"
+            android:textColor="@color/white"
+            android:text="-"
+            android:background="@color/purple_700"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@+id/currencyTextView"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginLeft="110dp" />
+
+        <TextView
+            android:id="@+id/quantityTextView"
+            android:layout_below="@+id/priceTitleTextView"
+            android:layout_toRightOf="@+id/minusButton"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:text="0"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/plusButton"
+            android:layout_toRightOf="@+id/quantityTextView"
+            android:layout_below="@+id/quantityTitleTextView"
+            android:textColor="@color/white"
+            android:text="+"
+            android:background="@color/purple_700"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp" />
+    </RelativeLayout>
+
+    <Button
+        android:text="Add to Card"
+        android:textColor="@color/white"
+        android:background="@color/purple_700"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
