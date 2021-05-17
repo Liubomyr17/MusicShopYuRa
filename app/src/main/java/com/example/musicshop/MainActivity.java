@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void decreaseQuantity(View view) {
         quantity = quantity - 1;
+        if (quantity < 0) {
+            quantity = 0;
+        }
         TextView increaseQty = findViewById(R.id.quantityTextView);
         increaseQty.setText("" + quantity);
     }
