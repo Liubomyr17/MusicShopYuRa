@@ -1,5 +1,6 @@
 package com.example.musicshop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -110,16 +111,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Order order = new Order();
 
         order.userName = userNameEditText.getText().toString();
-        Log.d("printUserName", order.userName);
-
         order.goodsName = goodsName;
-        Log.d("goodsName", order.goodsName);
-
         order.quantity = quantity;
-        Log.d("quantity", "" + order.quantity);
-
         order.orderPrice = quantity * price;
-        Log.d("orderPrice", "" + order.orderPrice);
+
+        // Звідки - куди ентіті буде посилатись
+        Intent orderIntent = new Intent(MainActivity.this, OrderActivity.class);
+        orderIntent.putExtra("userNameForIntent", order.userName);
+        orderIntent.putExtra("goodsNameForIntent", order.goodsName);
+        orderIntent.putExtra("quantityForIntent", order.quantity);
+        orderIntent.putExtra("orderPriceForIntent", order.orderPrice);
+
+        startActivity(orderIntent);
 
     }
 }
