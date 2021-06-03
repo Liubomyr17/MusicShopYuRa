@@ -162,7 +162,8 @@
     </RelativeLayout>
 
     <Button
-        android:text="Add to Card"
+        android:text="@string/add_to_card"
+        android:onClick="addToCard"
         android:textColor="@color/white"
         android:background="@color/purple_700"
         android:layout_marginTop="100dp"

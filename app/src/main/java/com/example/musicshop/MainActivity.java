@@ -1,9 +1,11 @@
 package com.example.musicshop;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,12 +26,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     HashMap goodsMap;
     String goodsName;
     double price;
+    EditText userNameEditText;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        userNameEditText = findViewById(R.id.nameEditText);
         createSpinner();
         createMap();
     }
@@ -99,6 +103,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    public void addToCard(View view) {
+        Order order = new Order();
+
+        order.userName = userNameEditText.getText().toString();
+        Log.d("printUserName", order.userName);
+
+        order.goodsName = goodsName;
+        Log.d("goodsName", order.goodsName);
+
+        order.quantity = quantity;
+        Log.d("quantity", "" + order.quantity);
+
+        order.orderPrice = quantity * price;
+        Log.d("orderPrice", "" + order.orderPrice);
 
     }
 }
