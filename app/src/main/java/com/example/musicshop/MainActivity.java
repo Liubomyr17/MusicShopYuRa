@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         order.userName = userNameEditText.getText().toString();
         order.goodsName = goodsName;
         order.quantity = quantity;
+        order.price = price;
         order.orderPrice = quantity * price;
 
         // Звідки - куди ентіті буде посилатись
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         orderIntent.putExtra("userNameForIntent", order.userName);
         orderIntent.putExtra("goodsNameForIntent", order.goodsName);
         orderIntent.putExtra("quantityForIntent", order.quantity);
+        orderIntent.putExtra("priceForIntent", order.price);
         orderIntent.putExtra("orderPriceForIntent", order.orderPrice);
 
         startActivity(orderIntent);
